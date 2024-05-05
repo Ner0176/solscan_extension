@@ -60,8 +60,7 @@ async function executeScript() {
                     headerRow.insertAdjacentHTML('beforeend', headerHtmlToInject);
                 }
                 const tRows = table.getElementsByTagName('tr');
-                //ForEach no aplica asincronicidad, pero aún así funciona mejor que un for con sincronicidad...
-                Array.prototype.slice.call(tRows, 1).forEach(async (item) => {
+                for (const item of Array.from(tRows).slice(1)) {
                     const tData = item.querySelectorAll('td');
                     if (tData.length > 5) {
                         let action = "";
@@ -98,7 +97,7 @@ async function executeScript() {
                             else item.insertAdjacentHTML('beforeend', htmlToInject);
                         }
                     }
-                });
+                };
             } catch (error) {
                 console.error('Fetch error:', error);
             }
