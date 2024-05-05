@@ -1,1 +1,0 @@
-# solscan_extension

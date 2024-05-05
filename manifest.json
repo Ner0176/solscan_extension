@@ -1,0 +1,15 @@
+{
+    "name": "Solscan Inject - OC",
+    "description": "Esta extensión modifica la página de https://solscan.io/ para añadir dos botones que redirijen al usuario a dextools.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "32": "images/extension-logo.png"
+      },
+    "content_scripts": [
+        {
+          "js": ["scripts/app.js"],
+          "matches": ["https://solscan.io/*"]
+        }
+    ]
+}
